@@ -9,6 +9,7 @@ public class FlexibleRead {
 
     /**
      * 读取一个整数
+     *
      * @return 输入的整数值
      */
     public static int readInt() {
@@ -17,6 +18,7 @@ public class FlexibleRead {
 
     /**
      * 读取一个长整数
+     *
      * @return 输入的长整数值
      */
     public static long readLong() {
@@ -25,6 +27,7 @@ public class FlexibleRead {
 
     /**
      * 读取一个浮点数
+     *
      * @return 输入的浮点数值
      */
     public static float readFloat() {
@@ -33,6 +36,7 @@ public class FlexibleRead {
 
     /**
      * 读取一个双精度浮点数
+     *
      * @return 输入的双精度浮点数值
      */
     public static double readDouble() {
@@ -41,6 +45,7 @@ public class FlexibleRead {
 
     /**
      * 读取一个字符
+     *
      * @return 输入的第一个字符
      */
     public static char readChar() {
@@ -49,6 +54,7 @@ public class FlexibleRead {
 
     /**
      * 读取一个字符串
+     *
      * @return 输入的字符串
      */
     public static String readString() {
@@ -57,6 +63,7 @@ public class FlexibleRead {
 
     /**
      * 读取一行字符串
+     *
      * @return 输入的一行字符串
      */
     public static String readLine() {
@@ -65,6 +72,7 @@ public class FlexibleRead {
 
     /**
      * 读取一行字符串，并在读取前打印提示信息
+     *
      * @param message 提示信息
      * @return 输入的一行字符串
      */
