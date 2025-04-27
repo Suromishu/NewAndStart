@@ -1,5 +1,8 @@
 package OtherCode.PerTools;
 
+import java.util.Arrays;
+import java.util.Random;
+
 @SuppressWarnings("unused")
 public class BasicCreate {
 
@@ -42,6 +45,45 @@ public class BasicCreate {
      */
     public static int[] getRandArray() {
         return getRandArray(defaultSize);
+    }
+
+    /**
+     * 获取指定大小的随机整形数组，数组中不会有重复数字
+     *
+     * @param size 数组大小
+     * @param max  随机数的最大值（不包含）
+     * @return 包含随机整数的数组
+     * @throws IllegalArgumentException 如果 size > max，则抛出异常
+     */
+    public static int[] getRandArrayUp(int size, int max) {
+        if (size > max) {
+            throw new IllegalArgumentException("数组大小不能大于随机数的最大值");
+        }
+        int[] array = new int[max];
+        for (int i = 0; i < max; i++) {
+            array[i] = i;
+        }
+        tempShuffleArray(array);
+        return Arrays.copyOf(array, size);
+    }
+
+    /**
+     * 获取指定大小的随机整形数组，数组中不会有重复数字，默认最大值为100
+     *
+     * @param size 数组大小
+     * @return 包含随机整数的数组
+     */
+    public static int[] getRandArrayUp(int size) {
+        return getRandArrayUp(size, defaultMax);
+    }
+
+    /**
+     * 获取随机整形数组，数组中不会有重复数字，默认最大值为100，长度为10
+     *
+     * @return 包含随机整数的数组
+     */
+    public static int[] getRandArrayUp() {
+        return getRandArrayUp(defaultSize);
     }
 
     /**
@@ -98,5 +140,19 @@ public class BasicCreate {
      */
     public static String getRandString() {
         return getRandString(defaultSize);
+    }
+
+
+    /**
+     * 洗牌算法：对数组进行随机打乱
+     *
+     * @param array 待洗牌的数组
+     */
+    private static void tempShuffleArray(int[] array) {
+        Random random = new Random();
+        for (int i = array.length - 1; i > 0; i--) {
+            int index = random.nextInt(i + 1);
+            ArrayUtil.swapIndex(array, i, index);
+        }
     }
 }
