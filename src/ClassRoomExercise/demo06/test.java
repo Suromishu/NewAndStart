@@ -8,5 +8,8 @@ public class test {
 
         Cats cat = new Cats("小花", 2, "黑色");
         cat.eat();
+
+        Dogs dog2 = new Dogs();
+        dog2.setAge(-5);
     }
 }

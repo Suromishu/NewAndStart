@@ -37,6 +37,6 @@ public abstract class Animals {
 
     private void checkAge(int age) {
         if (age < 0 ||  age > 200)
-            throw new SpecificNumException("年龄不合法");
+            throw new SpecificNumberException("年龄不合法");
     }
 }
