@@ -1,0 +1,15 @@
+
+1.定义一个Employee类,属性:
+		name:String    age:int     salary:double
+		把若干Employee对象放在Set中
+
+		要求：
+			1.如果员工的姓名、年龄、薪资都相同就认为是重复元素
+			2.输出薪资最高的员工的信息
+
+2.现有数组s {"for","if","if","do","while","do","do","break","switch","while"}
+	定义2个集合，分别用来存以下数据：
+		所有元素(去除重复元素)组成的集合
+		重复元素组成的集合
+
+3.优化学生管理系统
