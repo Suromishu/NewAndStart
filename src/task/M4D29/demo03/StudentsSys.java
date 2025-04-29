@@ -62,6 +62,7 @@ public class StudentsSys {
             students.add(s);
             System.out.println("添加成功");
         }
+        FlexibleRead.readLine();
     }
 
     //删除学生
