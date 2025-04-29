@@ -19,6 +19,7 @@ public class test {
                 max = e;
             }
         }
+        System.out.println("---------------------------");
         System.out.println(max);
     }
 }
