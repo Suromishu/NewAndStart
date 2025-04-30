@@ -1,4 +1,4 @@
-package ClassRoomExercise.demo06;
+package ClassRoomExercise.demo1.demo06;
 
 public class SpecificNumberException extends RuntimeException {
     public SpecificNumberException() {

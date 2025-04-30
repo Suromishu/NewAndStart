@@ -1,4 +1,4 @@
-package ClassRoomExercise;
+package ClassRoomExercise.demo1;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
