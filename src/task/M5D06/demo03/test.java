@@ -1,11 +1,5 @@
 package task.M5D06.demo03;
 
-/*
-把多个Student对象放在集合中,排序并遍历输出
-		排序规则:age大的在前面
-		使用TreeSet
-*/
-
 import java.util.Comparator;
 import java.util.TreeSet;
 
