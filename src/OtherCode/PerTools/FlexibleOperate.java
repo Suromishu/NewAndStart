@@ -97,4 +97,16 @@ public class FlexibleOperate {
             return false;
         }
     }
+
+    /**
+     * 创建一个文件夹
+     *
+     * @param absolutePath 文件夹的绝对路径
+     * @param folderName 文件夹名称
+     * @return 是否成功创建文件夹
+     */
+    public static boolean createFiles(String absolutePath, String folderName) {
+        File folder = new File(absolutePath, folderName);
+        return folder.mkdirs();
+    }
 }
