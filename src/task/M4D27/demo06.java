@@ -1,13 +1,13 @@
 package task.M4D27;
 
-import OtherCode.PerTools.FlexibleRead;
+import OtherCode.PerTools.FlexibleOperate;
 
 public class demo06 {
     public static void main(String[] args) {
         String[] names = {"tom", "lilei", "jack"};
 
         while (true) {
-            String name =FlexibleRead.readLine("请输入用户名：");
+            String name = FlexibleOperate.readLine("请输入用户名：");
             if (name.length() < 3 || name.length() > 7) {
                 System.out.println("用户名必须3-7位");
             } else {
@@ -24,11 +24,11 @@ public class demo06 {
             }
         }
         while (true) {
-            String password = FlexibleRead.readLine("设置密码：");
+            String password = FlexibleOperate.readLine("设置密码：");
             if (password.length() != 6) {
                 System.out.println("密码必须6位");
             } else {
-                String conPassword = FlexibleRead.readLine("确认密码：");
+                String conPassword = FlexibleOperate.readLine("确认密码：");
                 if (conPassword.equals(password)) {
                     System.out.println("注册成功！");
                     break;

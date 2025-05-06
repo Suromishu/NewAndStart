@@ -1,6 +1,6 @@
 package ClassRoomExercise.demo1;
 
-import OtherCode.PerTools.FlexibleRead;
+import OtherCode.PerTools.FlexibleOperate;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -28,7 +28,7 @@ public class demo07 {
         else if (c1.contains("ccc"))
             System.out.println("ccc!");
 
-        String re = FlexibleRead.readLine();
+        String re = FlexibleOperate.readLine();
         c1.remove(re);
         if (c1.isEmpty())
             System.out.println("空");

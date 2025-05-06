@@ -1,6 +1,6 @@
 package ClassRoomExercise.demo1;
 
-import OtherCode.PerTools.FlexibleRead;
+import OtherCode.PerTools.FlexibleOperate;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,7 +18,7 @@ public class demo05 {
     }
 
     public static int exceptTest() throws ParseException, IllegalArgumentException{
-        int a = FlexibleRead.readInt();
+        int a = FlexibleOperate.readInt();
 
         Date date = new SimpleDateFormat("yyyy-MM-dd-").parse("2025年04月28日");
         System.out.println(date);

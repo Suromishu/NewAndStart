@@ -1,9 +1,10 @@
 package OtherCode.PerTools;
 
+import java.io.File;
 import java.util.Scanner;
 
 @SuppressWarnings("unused")
-public class FlexibleRead {
+public class FlexibleOperate {
 
     static Scanner sc = new Scanner(System.in);
 
@@ -79,5 +80,21 @@ public class FlexibleRead {
     public static String readLine(String message) {
         System.out.print(message);
         return sc.nextLine();
+    }
+
+    /**
+     * 创建一个文件
+     *
+     * @param absolutePath 文件的绝对路径
+     * @param fileName 文件名称
+     * @return 是否成功创建文件
+     */
+    public static boolean createFile(String absolutePath, String fileName) {
+        File file = new File(absolutePath, fileName);
+        try {
+            return file.createNewFile();
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

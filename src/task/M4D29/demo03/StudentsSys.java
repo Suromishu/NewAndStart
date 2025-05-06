@@ -2,7 +2,7 @@ package task.M4D29.demo03;
 
 //学生信息管理系统
 
-import OtherCode.PerTools.FlexibleRead;
+import OtherCode.PerTools.FlexibleOperate;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,7 +20,7 @@ public class StudentsSys {
                     "5.展示所有学生\n" +
                     "6.退出系统\n" +
                     "--------------------");
-            String choice = FlexibleRead.readLine("请输入你的选择：\n");
+            String choice = FlexibleOperate.readLine("请输入你的选择：\n");
             switch (choice) {
                 case "1":
                     addStudent(students);
@@ -50,11 +50,11 @@ public class StudentsSys {
     public static void addStudent(Collection<Students> students) {
         Students s = new Students();
 
-        s.setName(FlexibleRead.readLine("请输入学生姓名："));
+        s.setName(FlexibleOperate.readLine("请输入学生姓名："));
         System.out.println("请输入学生编号：");
-        s.setId(FlexibleRead.readInt());
+        s.setId(FlexibleOperate.readInt());
         System.out.println("请输入学生年龄：");
-        s.setAge(FlexibleRead.readInt());
+        s.setAge(FlexibleOperate.readInt());
 
         if (students.contains(s)) {
             System.out.println("该学生编号已存在");
@@ -62,7 +62,7 @@ public class StudentsSys {
             students.add(s);
             System.out.println("添加成功");
         }
-        FlexibleRead.readLine();
+        FlexibleOperate.readLine();
     }
 
     //删除学生
@@ -70,7 +70,7 @@ public class StudentsSys {
         Students s = new Students();
 
         System.out.println("请输入学生编号：");
-        s.setId(FlexibleRead.readInt());
+        s.setId(FlexibleOperate.readInt());
 
         if (students.contains(s)) {
             students.remove(s);
@@ -85,16 +85,16 @@ public class StudentsSys {
         Students s = new Students();
 
         System.out.println("请输入学生编号：");
-        s.setId(FlexibleRead.readInt());
+        s.setId(FlexibleOperate.readInt());
         if (!students.contains(s)) {
             System.out.println("该学生编号不存在");
         } else {
             students.remove(s);
             System.out.println("请输入学生姓名：");
-            s.setName(FlexibleRead.readLine());
-            s.setName(FlexibleRead.readLine());
+            s.setName(FlexibleOperate.readLine());
+            s.setName(FlexibleOperate.readLine());
             System.out.println("请输入学生年龄：");
-            s.setAge(FlexibleRead.readInt());
+            s.setAge(FlexibleOperate.readInt());
             students.add(s);
             System.out.println("修改成功");
         }
@@ -105,7 +105,7 @@ public class StudentsSys {
         Students s = new Students();
         System.out.println("请输入学生编号：");
 
-        s.setId(FlexibleRead.readInt());
+        s.setId(FlexibleOperate.readInt());
         if (students.contains(s)) {
             System.out.println(s);
         } else {

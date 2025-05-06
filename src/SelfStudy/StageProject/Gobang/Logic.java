@@ -1,6 +1,6 @@
 package SelfStudy.StageProject.Gobang;
 
-import OtherCode.PerTools.FlexibleRead;
+import OtherCode.PerTools.FlexibleOperate;
 
 import java.util.Arrays;
 
@@ -42,8 +42,8 @@ public class Logic {
         int x, y;
         while (true) {
             System.out.println(message);
-            x = FlexibleRead.readInt() - 1;
-            y = FlexibleRead.readInt() - 1;
+            x = FlexibleOperate.readInt() - 1;
+            y = FlexibleOperate.readInt() - 1;
 
             if (x < 0 || x >= board.length || y < 0 || y >= board.length) {
                 System.out.println("输入坐标超出范围，请重新操作");
