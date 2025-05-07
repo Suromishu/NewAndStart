@@ -55,13 +55,13 @@ public class FileUtil {
     /**
      * 将一个文件完全复制给另一个文件
      *
-     * @param file1 复制的文件
-     * @param file2 目标文件
+     * @param source 复制的文件
+     * @param target 目标文件
      * @return 是否成功复制文件
      */
-    public static boolean copyFile(File file1, File file2) {
-        try (FileInputStream fis = new FileInputStream(file1);
-             FileOutputStream fos = new FileOutputStream(file2, true)) {
+    public static boolean copyFile(File source, File target) {
+        try (FileInputStream fis = new FileInputStream(source);
+             FileOutputStream fos = new FileOutputStream(target, true)) {
             byte[] buffer = new byte[8192];
             int len;
             while ((len = fis.read(buffer)) != -1) {
