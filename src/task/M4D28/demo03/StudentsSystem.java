@@ -1,6 +1,6 @@
 package task.M4D28.demo03;
 
-import OtherCode.PerTools.FlexibleOperate;
+import OtherCode.PerTools.FlexibleRead;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,13 +18,13 @@ public class StudentsSystem {
                     "  3- 根据姓名查找学生\n" +
                     "  4- 显示所有学生\n" +
                     "  5- 退出系统");
-            String choice = FlexibleOperate.readLine("请输入你的选择：");
+            String choice = FlexibleRead.readLine("请输入你的选择：");
             switch (choice) {
                 case "1":
                     addStudent(students);
                     break;
                 case "2":
-                    String id = FlexibleOperate.readLine("请输入学生id");
+                    String id = FlexibleRead.readLine("请输入学生id");
                     Students foundById = findStudentById(students, id);
                     if (foundById != null) {
                         System.out.println(foundById);
@@ -33,7 +33,7 @@ public class StudentsSystem {
                     }
                     break;
                 case "3":
-                    String name = FlexibleOperate.readLine("请输入学生姓名");
+                    String name = FlexibleRead.readLine("请输入学生姓名");
                     Students foundByName = findStudentByName(students, name);
                     if (foundByName != null) {
                         System.out.println(foundByName);
@@ -54,9 +54,9 @@ public class StudentsSystem {
     }
 
     public static void addStudent(Collection<Students> students) {
-        String id = FlexibleOperate.readLine("请输入学生id");
-        String name = FlexibleOperate.readLine("请输入学生姓名");
-        String age = FlexibleOperate.readLine("请输入学生年龄");
+        String id = FlexibleRead.readLine("请输入学生id");
+        String name = FlexibleRead.readLine("请输入学生姓名");
+        String age = FlexibleRead.readLine("请输入学生年龄");
 
         if (isInvalidInput(id, name, age)) {
             System.out.println("输入不能为空");

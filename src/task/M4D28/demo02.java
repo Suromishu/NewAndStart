@@ -1,6 +1,6 @@
 package task.M4D28;
 
-import OtherCode.PerTools.FlexibleOperate;
+import OtherCode.PerTools.FlexibleRead;
 
 public class demo02 {
     public static void main(String[] args) {
@@ -12,11 +12,11 @@ public class demo02 {
             }
         }
         while (true) {
-            String password = FlexibleOperate.readLine("设置密码：");
+            String password = FlexibleRead.readLine("设置密码：");
             if (password.length() != 6) {
                 System.out.println("密码必须6位");
             } else {
-                if (FlexibleOperate.readLine("确认密码：").equals(password)) {
+                if (FlexibleRead.readLine("确认密码：").equals(password)) {
                     System.out.println("注册成功！");
                     break;
                 } else {
@@ -26,7 +26,7 @@ public class demo02 {
         }
     }
     public static String inputUserName() {
-        String userName = FlexibleOperate.readLine("请输入用户名：");
+        String userName = FlexibleRead.readLine("请输入用户名：");
         if (userName.length() < 3 || userName.length() > 7) {
             System.out.println("用户名必须3-7位");
             return inputUserName();

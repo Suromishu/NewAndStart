@@ -1,13 +1,13 @@
 package task.M5D06;
 
-import OtherCode.PerTools.FlexibleOperate;
+import OtherCode.PerTools.FlexibleRead;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class demo02 {
     public static void main(String[] args) {
-        String str = FlexibleOperate.readLine();
+        String str = FlexibleRead.readLine();
         char[] chars = str.toCharArray();
         Map<Character, Integer> map = new HashMap<>();
 

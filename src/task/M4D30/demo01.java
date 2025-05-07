@@ -1,6 +1,6 @@
 package task.M4D30;
 
-import OtherCode.PerTools.FlexibleOperate;
+import OtherCode.PerTools.FlexibleRead;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,14 +49,14 @@ public class demo01 {
 
             while (true) {
                 System.out.println("请输入要购买的商品编号:(88表示结束购物)");
-                int choice = FlexibleOperate.readInt();
+                int choice = FlexibleRead.readInt();
                 if (choice == 88) {
                     System.out.println("已退出购物车");
                     break;
                 }
                 if (goods.containsKey(choice)) {
                     System.out.println("请输入购买的商品数量:");
-                    int count = FlexibleOperate.readInt();
+                    int count = FlexibleRead.readInt();
                     if (count > 0) {
                         cart.put(choice, cart.getOrDefault(choice, 0) + count);
                     } else {
@@ -84,7 +84,7 @@ public class demo01 {
             System.out.printf("总件数：%d\t总价：%.2f\n", allQuantity, amount);
 
             System.out.println("请选择支付方式\n1.支付宝支付\n2.网银支付");
-            int payment = FlexibleOperate.readInt();
+            int payment = FlexibleRead.readInt();
             if (payment == 1 || payment == 2) {
                 System.out.println("支付完成！");
                 break;

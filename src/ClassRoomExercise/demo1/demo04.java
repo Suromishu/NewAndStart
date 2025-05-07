@@ -2,7 +2,7 @@ package ClassRoomExercise.demo1;
 
 
 import OtherCode.PerTools.BasicCreate;
-import OtherCode.PerTools.FlexibleOperate;
+import OtherCode.PerTools.FlexibleRead;
 
 import java.util.InputMismatchException;
 
@@ -17,7 +17,7 @@ public class demo04 {
 
         int i = 0;
         try {
-            i = FlexibleOperate.readInt(); //1
+            i = FlexibleRead.readInt(); //1
 
             System.out.println(20 / i); //2
 
@@ -40,8 +40,8 @@ public class demo04 {
 
         int[] arr = null;
         try {
-            int size = FlexibleOperate.readInt();
-            int max = FlexibleOperate.readInt();
+            int size = FlexibleRead.readInt();
+            int max = FlexibleRead.readInt();
             arr = BasicCreate.getRandArrayUp(size, max); //1
 
             System.out.println(arr[size]); //2
@@ -64,10 +64,10 @@ public class demo04 {
 
         String str = "abc";
         try {
-            int index = FlexibleOperate.readInt();
+            int index = FlexibleRead.readInt();
             System.out.println(str.charAt(index)); //1
 
-            str = FlexibleOperate.readString();
+            str = FlexibleRead.readString();
             int num = Integer.parseInt(str); //2
 
             Object obj = "hello";

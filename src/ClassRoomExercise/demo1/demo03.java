@@ -1,6 +1,6 @@
 package ClassRoomExercise.demo1;
 
-import OtherCode.PerTools.FlexibleOperate;
+import OtherCode.PerTools.FlexibleRead;
 
 import java.util.InputMismatchException;
 
@@ -14,7 +14,7 @@ public class demo03 {
         int b = 0;
 
         try {
-            int a = FlexibleOperate.readInt();
+            int a = FlexibleRead.readInt();
 
             b = 100 / a;
             System.out.println(b);

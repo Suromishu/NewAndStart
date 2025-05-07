@@ -1,12 +1,12 @@
 package task.M4D27;
 
-import OtherCode.PerTools.FlexibleOperate;
+import OtherCode.PerTools.FlexibleRead;
 
 import java.text.SimpleDateFormat;
 
 public class demo04 {
     public static void main(String[] args) {
-        String str = FlexibleOperate.readLine("请输入你的出生日期：(格式：yyyy-MM-dd)");
+        String str = FlexibleRead.readLine("请输入你的出生日期：(格式：yyyy-MM-dd)");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         long birthday;
         try {

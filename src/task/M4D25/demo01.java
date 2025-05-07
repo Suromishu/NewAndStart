@@ -1,11 +1,11 @@
 package task.M4D25;
 
-import OtherCode.PerTools.FlexibleOperate;
+import OtherCode.PerTools.FlexibleRead;
 
 public class demo01 {
     public static void main(String[] args) {
 
-        String str = FlexibleOperate.readLine("请输入：");
+        String str = FlexibleRead.readLine("请输入：");
 
         String year = str.substring(6, 10);
         String month = str.substring(10, 12);

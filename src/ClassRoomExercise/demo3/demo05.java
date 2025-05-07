@@ -1,6 +1,6 @@
 package ClassRoomExercise.demo3;
 
-import OtherCode.PerTools.FlexibleOperate;
+import OtherCode.PerTools.FlexibleRead;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -13,7 +13,7 @@ public class demo05 {
         FileOutputStream fos = new FileOutputStream(file1, true);
 
         while (true) {
-            String str = FlexibleOperate.readLine();
+            String str = FlexibleRead.readLine();
             if (str.equalsIgnoreCase("exit")) {
                 break;
             }
