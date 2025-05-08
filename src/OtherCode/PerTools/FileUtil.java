@@ -37,7 +37,7 @@ public class FileUtil {
     }
 
     /**
-     * 在文件内写入一行字符
+     * 在文件内追加写入一行字符
      *
      * @param file 待写入的文件
      * @return 是否成功写入文件
