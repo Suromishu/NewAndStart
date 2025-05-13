@@ -28,7 +28,9 @@ public class PhotoOperate {
             reFolder.mkdir();
         }
 
+        //重复的图片存入一个列表
         List<File> duplicateFiles = new ArrayList<>();
+        //哈希值，同一种图片存入同一个列表
         Map<String, List<File>> hashToFilesMap = new HashMap<>();
 
         // 遍历文件夹中的所有图片
@@ -43,6 +45,7 @@ public class PhotoOperate {
         //  计算图片的哈希值
         for (File file : files) {
             String hash = calculateImageHash(file);
+            //  如果哈希值不存在，则创建一个空列表
             if (!hashToFilesMap.containsKey(hash)) {
                 hashToFilesMap.put(hash, new ArrayList<File>());
             }
