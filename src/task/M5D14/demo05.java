@@ -1,9 +1,5 @@
 package task.M5D14;
 
-/*
- - 把上一步操作后的元素，演员的姓名 作为构造方法的参数创建演员对象,遍历数据
-*/
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
