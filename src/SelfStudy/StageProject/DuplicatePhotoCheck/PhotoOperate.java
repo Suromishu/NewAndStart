@@ -1,7 +1,6 @@
 package SelfStudy.StageProject.DuplicatePhotoCheck;
 
 import java.io.File;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,8 +13,8 @@ import java.util.Map;
 
 public class PhotoOperate {
     public static void main(String[] args) throws IOException {
-        String folderPath = "C:\\Users\\27050\\IdeaProjects\\NewAndStart\\src\\SelfStudy\\StageProject\\DuplicatePhotoCheck\\photo"; // 图片文件夹路径
-        String reFolderPath = "C:\\Users\\27050\\IdeaProjects\\NewAndStart\\src\\SelfStudy\\StageProject\\DuplicatePhotoCheck\\RePhoto"; // 新建的重复图片文件夹路径
+        String folderPath = ""; // 图片文件夹路径
+        String reFolderPath = ""; // 新建的重复图片文件夹路径
 
         moveDupPhotos(folderPath, reFolderPath);
     }
@@ -24,42 +23,41 @@ public class PhotoOperate {
         File folder = new File(folderPath);
         File reFolder = new File(reFolderPath);
 
+        boolean flag;
         if (!reFolder.exists()) {
-            reFolder.mkdir();
+            flag = reFolder.mkdir();
+        } else {
+            flag = true;
+        }
+        if (!flag || !folder.exists()) {
+            System.out.println("文件夹路径获取失败");
+            return;
         }
 
-        //重复的图片存入一个列表
         List<File> duplicateFiles = new ArrayList<>();
-        //哈希值，同一种图片存入同一个列表
         Map<String, List<File>> hashToFilesMap = new HashMap<>();
 
-        // 遍历文件夹中的所有图片
-        File[] files = folder.listFiles(new FilenameFilter() {
-            @Override
-            public boolean accept(File dir, String name) {
-                String lowerName = name.toLowerCase();
-                return lowerName.endsWith(".jpg") || lowerName.endsWith(".png");
-            }
+        File[] files = folder.listFiles((dir, name) -> {
+            String lowerName = name.toLowerCase();
+            return lowerName.endsWith(".jpg") || lowerName.endsWith(".png");
         });
 
-        //  计算图片的哈希值
-        for (File file : files) {
-            String hash = calculateImageHash(file);
-            //  如果哈希值不存在，则创建一个空列表
-            if (!hashToFilesMap.containsKey(hash)) {
-                hashToFilesMap.put(hash, new ArrayList<File>());
+        if (files != null) {
+            for (File file : files) {
+                String hash = calculateImageHash(file);
+                if (!hashToFilesMap.containsKey(hash)) {
+                    hashToFilesMap.put(hash, new ArrayList<>());
+                }
+                hashToFilesMap.get(hash).add(file);
             }
-            hashToFilesMap.get(hash).add(file);
         }
 
-        // 找出重复的图片
         for (List<File> fileList : hashToFilesMap.values()) {
             if (fileList.size() > 1) {
                 duplicateFiles.addAll(fileList.subList(1, fileList.size()));
             }
         }
 
-        // 将重复的图片移动到 RePhoto 文件夹
         for (File file : duplicateFiles) {
             Path source = Paths.get(file.getAbsolutePath());
             Path target = Paths.get(reFolderPath, file.getName());
@@ -69,8 +67,6 @@ public class PhotoOperate {
     }
 
     private static String calculateImageHash(File file) throws IOException {
-        String str1 = Long.toHexString(file.length());
-        String str2 = Long.toHexString(file.lastModified());
-        return String.valueOf((str1 + str2).hashCode());
+        return Long.toHexString(file.length());
     }
 }

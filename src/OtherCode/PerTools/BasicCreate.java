@@ -105,6 +105,9 @@ public class BasicCreate {
             case LOWER:
                 chars = defaultLower;
                 break;
+            case NO_DIGITS:
+                chars = defaultUpper + defaultLower;
+                break;
             case UPPER_DIGITS:
                 chars = defaultUpper + defaultDigits;
                 break;
