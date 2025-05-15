@@ -1,0 +1,54 @@
+CREATE DATABASE MYdb1;
+
+USE mydb1;
+
+SHOW mydb1;
+
+DROP TABLE if EXISTS employee;
+CREATE TABLE if NOT EXISTS employee(
+    id INT,
+    name VARCHAR(20),
+    sex VARCHAR(10),
+    birthday DATE,
+    salary FLOAT,
+    resume TEXT
+);
+
+INSERT INTO employee VALUES(1,"zhangsan","male","1980-11-25",2000,"good body");
+INSERT INTO employee VALUES(2,"lisi","male","1980-04-25",1000,"good body");
+INSERT INTO employee VALUES(3,"xiaohong","female","1978-11-25",4000,"good girl");
+
+UPDATE employee SET salary = 5000;
+UPDATE employee SET salary = 3000 WHERE name = "zhangsan";
+UPDATE employee SET salary = 4000, sex = "female" WHERE name = "lisi";
+UPDATE employee SET salary = salary + 1000 WHERE name = "xiaohong";
+
+
+
+CREATE TABLE student(
+    id INT,
+    name VARCHAR(20),
+    chinese FLOAT,
+    english FLOAT,
+    math FLOAT
+);
+
+INSERT INTO student(id,name,chinese,english,math) VALUES(1,'张小明',89,78,90);
+INSERT INTO student(id,name,chinese,english,math) VALUES(2,'李进',67,53,95);
+INSERT INTO student(id,name,chinese,english,math) VALUES(3,'王五',87,78,77);
+INSERT INTO student(id,name,chinese,english,math) VALUES(4,'李一',88,98,92);
+INSERT INTO student(id,name,chinese,english,math) VALUES(5,'李来财',82,84,67);
+INSERT INTO student(id,name,chinese,english,math) VALUES(6,'张进宝',55,85,45);
+INSERT INTO student(id,name,chinese,english,math) VALUES(7,'黄蓉',75,65,30);
+
+SELECT * FROM student;
+SELECT name, english FROM student;
+SELECT DISTINCT english FROM student;
+ALTER TABLE student ADD allscore FLOAT;
+UPDATE student SET allscore = chinese + english + math;
+SELECT name, allscore FROM student;
+SELECT name, allscore + 10 FROM student;
+SELECT name, allscore + 10 AS 总分 FROM student;
+SELECT * FROM student WHERE name = "李一";
+SELECT name, english FROM student WHERE english > 90;
+SELECT name, allscore FROM student WHERE allscore > 200;
