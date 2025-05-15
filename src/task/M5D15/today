@@ -8,7 +8,7 @@
 一、update练习
 
 drop table if exists employee;
-create table if not exists employxee
+create table if not exists employee
 (
     id int,
     name varchar(20),
@@ -47,7 +47,7 @@ insert into student(id,name,chinese,english,math) values(6,'张进宝',55,85,45)
 insert into student(id,name,chinese,english,math) values(7,'黄蓉',75,65,30);
 
 1.查询表中所有学生的信息。
-2.查询表中所有学生的姓名和对应的英语成绩。;
+2.查询表中所有学生的姓名和对应的英语成绩。
 3.过滤表中英语成绩的重复数据。
 4.统计每个学生的总分。
 5.在所有学生总分数上加10分特长分。
