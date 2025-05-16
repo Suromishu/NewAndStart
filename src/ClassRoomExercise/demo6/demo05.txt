@@ -1,0 +1,149 @@
+
+DROP TABLE IF EXISTS stu;
+CREATE TABLE stu (
+  id INT,
+  name VARCHAR(20),
+  age INT,
+  sex VARCHAR(5),
+  address VARCHAR(100),
+  math INT,
+  english INT
+);
+
+
+INSERT INTO stu(id, name, age, sex, address, math, english) VALUES
+(1,'马云',55,'男','杭州',66,78),
+(2,'马化腾',45,'女','深圳',98,87),
+(3,'马景涛',55,'男','香港',56,77),
+(4,'柳岩',20,'女','湖南',76,65),
+(5,'柳青',20,'男','湖南',86,NULL),
+(6,'刘德华',57,'男','香港',99,99),
+(7,'马德',22,'女','香港',99,99),
+(8,'德玛西亚',18,'男','南京',56,65),
+(9,'唐僧',25,'男','长安',87,78),
+(10,'孙悟空',18,'男','花果山',100,66),
+(11,'猪八戒',22,'男','高老庄',58,78),
+(12,'沙僧',50,'男','流沙河',77,88),
+(13,'白骨精',22,'女','白虎岭',66,66),
+(14,'蜘蛛精',23,'女','盘丝洞',88,88);
+
+SELECT * FROM stu ORDER BY age;
+SELECT * FROM stu ORDER BY math DESC;
+SELECT * FROM stu ORDER BY age, id DESC;
+SELECT *, math + IFNULL(english, 0) AS 总成绩 FROM stu ORDER BY 总成绩 DESC, id;
+
+
+SELECT count(*) FROM stu;
+SELECT count(*) AS 总人数 FROM stu;
+SELECT count(id) AS 总人数 FROM stu;
+SELECT count(english) AS 总人数 FROM stu;
+
+SELECT MAX(age), MIN(age), SUM(english), AVG(english) FROM stu;
+
+SELECT * FROM stu WHERE sex = '男' ORDER BY age DESC, id;
+SELECT * FROM stu WHERE sex = '男' HAVING age > 25 ORDER BY age DESC, id;
+
+
+select LENGTH('abc张三') ;-- 9  utf-8 一个中文占3个字节
+
+select UPPER('heLLowoRldjava');-- 转换为大写
+
+select LOWER('heLLowoRldjava');-- 转换为小写
+
+select SUBSTRING('heLLowoRldjava',2); -- 截取字符串：从第几个字符开始
+
+select SUBSTRING('heLLowoRldjava',3,4);  -- 截取字符串：从第几个字符开始,往后截取4个长度
+
+select ROUND(12.469);-- 四舍五入 ：保留整数位	12
+select ROUND(12.469,2);-- 四舍五入 ：保留2位小数位12.47
+select ROUND(12.469,-1);  -- 12
+select ROUND(16.469,-1);  -- 20
+select MOD(10,3) ;-- 1 余数
+
+select CEIL(12.2); -- 13 向上取整
+select FLOOR(12.9);-- 12 向下取整
+
+select now() ;-- 当前时间
+select  STR_TO_DATE('2023-04-20','%Y-%m-%d')  ;-- 把字符串转换为日期类型
+select DATE_FORMAT(now(),'%Y-%m-%d %H-%i-%s') as 时间 ; -- 把日期格式化为字符串
+
+
+SELECT sex, COUNT(id) FROM stu GROUP BY sex;
+SELECT address, COUNT(id) FROM stu WHERE age >= 18 GROUP BY address HAVING COUNT(id) >= 2;
+
+SELECT * FROM stu ORDER BY id LI
+MIT 0, 5;
+SELECT * FROM stu ORDER BY id LIMIT 5, 5;
+SELECT * FROM stu ORDER BY id LIMIT 10, 5;
+
+SELECT * FROM stu WHERE sex = '男' LIMIT 0, 3;
+
+
+
+CREATE TABLE IF NOT EXISTS person(
+	pid INT PRIMARY KEY,
+	pname VARCHAR(10)
+);
+
+INSERT INTO person VALUES(1,'jack');
+INSERT INTO person VALUES(2,'jack');
+INSERT INTO person VALUES(3,'rose');
+INSERT INTO person VALUES(4,null);
+
+
+DROP TABLE IF EXISTS person;
+
+CREATE TABLE IF NOT EXISTS person(
+	pid INT PRIMARY KEY,
+	pname VARCHAR(10) UNIQUE
+);
+
+INSERT INTO person VALUES(1,'jack');
+INSERT INTO person VALUES(2,'jack');
+INSERT INTO person VALUES(3,null);
+INSERT INTO person VALUES(4,null);
+
+SELECT * FROM person;
+
+
+DROP TABLE IF EXISTS person;
+
+CREATE TABLE IF NOT EXISTS person(
+	pid INT PRIMARY KEY auto_increment,
+	pname VARCHAR(10) UNIQUE,
+	age INT DEFAULT 18,
+	address VARCHAR(20) NOT NULL
+);
+
+INSERT INTO person VALUES(101,'jack',NULL,'zz');
+INSERT INTO person(pid,pname,address) VALUES(3,'rosexx','zz');
+INSERT INTO person(pname,address) VALUES('rose113','zz21122');
+
+SELECT * FROM person;
+
+
+
+
+CREATE TABLE dept(
+	id INT PRIMARY KEY auto_increment,
+	name VARCHAR(10) NOT NULL UNIQUE,
+	loc VARCHAR(50)
+);
+
+INSERT INTO dept(name,loc) VALUES('人事部','郑州');
+INSERT INTO dept(name,loc) VALUES('财务部','郑州');
+INSERT INTO dept(name,loc) VALUES('研发部','郑州');
+INSERT INTO dept(name,loc) VALUES('销售部','郑州');
+
+SELECT * FROM dept;
+
+CREATE TABLE emp(
+	eid INT PRIMARY KEY auto_increment,
+	ename VARCHAR(20) NOT NULL,
+	salary DOUBLE(8,2) DEFAULT 5000,
+	did INT,
+	FOREIGN KEY(did) REFERENCES dept(id)
+);
+
+INSERT INTO emp VALUES(101,'jack',80000.00,1);
+SELECT * FROM emp;
