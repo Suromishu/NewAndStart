@@ -14,8 +14,8 @@ import java.util.Map;
 
 public class PhotoDemo {
     public static void main(String[] args) throws IOException {
-        String folderPath = "C:\\Users\\27050\\IdeaProjects\\NewAndStart\\src\\SelfStudy\\StageProject\\DuplicatePhotoCheck\\photo"; // 图片文件夹路径
-        String reFolderPath = "C:\\Users\\27050\\IdeaProjects\\NewAndStart\\src\\SelfStudy\\StageProject\\DuplicatePhotoCheck\\RePhoto"; // 新建的重复图片文件夹路径
+        String folderPath = ""; // 图片文件夹路径
+        String reFolderPath = ""; // 新建的重复图片文件夹路径
 
         moveDupPhotos(folderPath, reFolderPath);
     }
