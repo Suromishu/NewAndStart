@@ -1,0 +1,24 @@
+习题一：File: 递归:
+	请输出D:\test目录下 的java文件（名字以.java结尾）
+	显示文件名及路径和 最后修改时间(字符串样式)
+
+	思考：递归删除test文件夹下所有的.java 文件
+
+习题二：IO流
+	1.使用字节流 实现文件拷贝： 将d:\\index.jpg 复制到    d:\\test目录下
+	2.使用字符缓冲流 实现文件拷贝： 将d:\\a.txt 复制到    d:\\test目录下
+
+习题三：线程
+	1.简述线程的生命周期(5种状态)
+	2.使用两种方式创建线程
+	3.线程同步：三种同步锁
+
+习题四：排序算法
+
+习题五：日期格式化：
+	日期--格式化为指定的字符串
+
+	Date d=new Date();
+	SimpleDateFormate sdf=new SimpleDateFormate("yyyy-MM-dd HH:mm:ss");
+	String time=sdf.formate(d);
+习题六：Stream流
